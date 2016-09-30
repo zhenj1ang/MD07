@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    tools:context="cn.itcast.md07.MainActivity">
+
+    <!--
+          app:theme="@style/ThemeOverlay.AppCompat.Dark"
+          设置字体颜色为白色
+      -->
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        app:theme="@style/ThemeOverlay.AppCompat.Dark"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"/>
+
+
+    <android.support.design.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true"
+        tools:context="cn.itcast.md07.MainActivity">
+
+        <!--CoordinatorLayout第一部分-->
+        <android.support.design.widget.AppBarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <!--Part A-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="vertical"
+                android:background="@color/colorPrimary"
+                app:layout_scrollFlags="scroll"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:gravity="center_vertical"
+                    android:textColor="#fff"
+                    android:paddingLeft="10dp"
+                    android:text="材料设计例子演示"
+                    android:layout_height="80dp" />
+
+            </LinearLayout>
+
+            <!--Part B-->
+            <!--选项卡控件
+            app:theme="@style/ThemeOverlay.AppCompat.Dark"
+            设置字体颜色为白色
+            -->
+            <android.support.design.widget.TabLayout
+                android:id="@+id/tab_layout"
+                app:theme="@style/ThemeOverlay.AppCompat.Dark"
+                android:background="@color/colorPrimary"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+        </android.support.design.widget.AppBarLayout>
+
+        <!--CoordinatorLayout第二部分-->
+        <android.support.v4.view.ViewPager
+            android:id="@+id/view_pager"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/fab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|end"
+            android:layout_margin="@dimen/fab_margin"
+            android:src="@android:drawable/ic_dialog_email" />
+
+    </android.support.design.widget.CoordinatorLayout>
+
+</LinearLayout>
